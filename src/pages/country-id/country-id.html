@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Country ID's</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-grid border="1">
+    <ion-row *ngFor="let d of data, let i = index">
+      <ion-col>{{ data[i].name }}</ion-col>
+      <ion-col>{{ data[i].country_id }}</ion-col>
+    </ion-row>
+  </ion-grid>
+  
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Settings</ion-title>
+    <ion-buttons end>
+      <button ion-button outline (click)="pushCountryID()">
+        <ion-icon name="football-outline"></ion-icon>
+        Country ID's
+      </button>
+
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+
+  <p>Enter Country ID <input [(ngModel)]="countryID"></p>
+
+  <p>Player Ages:</p>
+
+  <p>Minimum <input [(ngModel)]="minAge"></p>
+  <p>Maximum <input [(ngModel)]="maxAge"></p>
+
+  <button ion-button (click)="save()">Save</button>
+  <button ion-button (click)="reset()">Reset</button>
+  <button ion-button (click)="cancel()">Cancel</button>
+
+</ion-content>

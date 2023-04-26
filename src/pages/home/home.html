@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar>
+
+    <ion-title>
+      G00246442
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button outline (click)="reload()">
+        <ion-icon name="bulb-outline"></ion-icon>New Quote
+      </button>
+      <button ion-button icon-only (click)="pushSettings()">
+        <!-- https://ionic.io/ionicons/usage, https://ionic.io/ionicons -->
+        <ion-icon name="settings-sharp"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <h2>Quote from {{ author }} about:</h2>
+  <ul>
+    <li *ngFor="let tag of tags">{{ tag }}</li>
+  </ul>
+  <h3>{{ quote }}</h3>
+  <hr>
+
+  <h2>Country ID {{ countryID }}{{ middleIsMessage }}{{ countryName }}</h2>
+  <!--https://angular.io/api/common/UpperCasePipe-->
+  <img [hidden]="elementHidden" src="https://flagsapi.com/{{data.country_code | uppercase}}/shiny/64.png">
+
+  <!-- https://ionicframework.com/docs/v3/api/components/scroll/Scroll/ -->
+  <!-- https://stackoverflow.com/questions/49813846/ionic-3-scrollable-content -->
+
+  <ion-scroll scrollX="true" scrollY="true">
+    <table border="1" [hidden]="elementHidden">
+
+      <tr>
+        <th>First Name</th>
+        <th>Surname</th>
+        <th>Age</th>
+        <th>Height</th>
+      </tr>
+
+      <tr *ngFor="let p of playerData, let i = index">
+        <td>{{ playerData[i].firstname }}</td>
+        <td>{{ playerData[i].lastname }}</td>
+        <td>{{ playerData[i].age }}</td>
+        <td>{{ playerData[i].height }}</td>
+      </tr>
+
+    </table>
+  </ion-scroll>
+
+  <button ion-button [hidden]="elementHidden" (click)="pushExtraInfo()" full>Extra Player Info</button>
+
+</ion-content>
